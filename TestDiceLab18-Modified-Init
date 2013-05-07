@@ -1,0 +1,49 @@
+/*   WILFREDO HENRIQUEZ
+ *  
+ */
+
+import javax.swing.JOptionPane;
+
+//*****  USING THE CASSS *************
+public class DisplayDiceClassLab18 
+
+{
+  public static void main ( String[] args)
+   {
+
+
+   int c1,c2;
+   int r1, r2;
+   int rs;
+   int cs;
+  String answer="";  
+  do
+  {
+ 
+  	DiceClassLab18 myd1 = new DiceClassLab18();
+  	DiceClassLab18 myd2 = new DiceClassLab18();
+  	r1 = myd1.RollDice();
+  	r1 = myd1.RollDice(); // roll twice dice be held on r1 last value
+  	c1 = myd1.RollCount(); // roll count was the time instantiated
+  	
+  	r2 = myd2.RollDice();
+  	c2 = myd2.RollCount();
+  	
+  	rs = DiceClassLab18.RollDiceStatic(3, 6); // static call roll 3 times max 6
+  	cs = DiceClassLab18.lifeRoll1; // static call the value of the acumulated static variable
+  	
+  	 String  message1 = String.format("RollDice  D1= %d, RollCount C1 = %d\n" +
+  	 		                          "RollDice  D2= %d, RollCount C2 = %d\n" +
+  	 		                          "DiceSatic NS= %d, RollCount CS = %d", r1, c1, r2, c2, rs, cs ); 
+        JOptionPane.showMessageDialog(null, message1); 
+ 
+
+    answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+ 
+  } while (answer.equalsIgnoreCase("y"));
+  	
+   } // END of Main
+} // End of Class
+
+
+
