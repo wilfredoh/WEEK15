@@ -1,0 +1,66 @@
+/* Wilfredo Henriquez
+  
+ */
+public class DiceClassLab18 
+{
+       
+      public static  int  lifeRoll1 =0;
+      public static  int myrandom1;
+      public static   int lomax=1, himax=6;
+      
+      public    int  lifeRoll;
+
+  	private int loBound, hiBound, myrandom;
+      
+      // constructor NO paramters
+  	public DiceClassLab18()
+  		{
+  		loBound = 1;
+  		hiBound = 6;
+  		lifeRoll = 0;
+  			
+  		}
+  	
+  	//constructor With parameters
+  	 public DiceClassLab18( int lo, int hi)
+  	 	{
+  		 loBound = lo;
+  		 hiBound = hi ;
+  	 	}
+
+  	 
+  	// Public no parameters
+       public int RollDice()
+  			{
+  		   myrandom = loBound + (int)(Math.random() * (hiBound) );
+  		   lifeRoll = lifeRoll + 1;
+  		   return myrandom;
+  			}
+  	 
+  	 
+  	// STATIC METHOD
+      public static int  RollDiceStatic( int number, int max)
+  	 	{    
+  		myrandom1=0;
+  		himax = max;
+  		for (int i = 0; i < number; i++ )
+  		  {
+  		    myrandom1 = myrandom1 + (lomax + (int)(Math.random() *(himax) ));
+  		    lifeRoll1 = lifeRoll1 + 1;
+  		   }
+  		   return myrandom1; 
+  	 	   }
+      
+
+      public static int RollCountStatic()   // method to retrieve Static variable "lifeRoll1"
+  		{			
+  			return lifeRoll1;		
+  		}
+
+      public  int RollCount()  
+  		{			
+  			return lifeRoll;		
+  		}
+  	
+}
+
