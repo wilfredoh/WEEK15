@@ -1,0 +1,47 @@
+
+/* Wilfredo Henriquez
+
+ */
+public class TrippleDice extends DiceClassLab18 
+{
+
+   
+  // Public no parameters
+     public int  RollDiceTripple ()
+  	{ 
+           int dice =0;
+           for (int i=0; i < 3; i++)
+           {
+            super.RollDice();
+      	  dice= dice + super.myrandom;
+           }
+           super.myrandom = dice;
+  		 return super.myrandom;
+  	}
+     
+  // STATIC METHOD
+    public static int  RollDiceStaticTripple(int number1, int max1)
+   	{   
+       
+       int dice1 =0;
+       for (int i=0; i < 3; i++)
+       	{
+      	 DiceClassLab18.RollDiceStatic(number1, max1);
+      	 dice1= dice1 + DiceClassLab18.myrandom1;
+       	}
+         DiceClassLab18.myrandom1=dice1;
+  	   return DiceClassLab18.myrandom1; 
+   	   }
+
+
+    public void  Reset()  
+  	{			
+  	 super.lifeRoll=0;
+  	}
+    
+    public static void  Reset1()  
+  	{			
+  	 lifeRoll1=0;
+  	}
+}
+
