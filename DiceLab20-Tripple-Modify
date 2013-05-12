@@ -1,0 +1,70 @@
+/* Wilfredo Henriquez
+ */
+
+import javax.swing.JOptionPane;
+
+public class TrippleDice extends DiceClassLab18 
+{
+
+   
+  // Public no parameters
+     public int  RollDiceTripple ()
+  	{ 
+           int dice =0;
+           for (int i=0; i < 3; i++)
+           {
+            super.RollDice();
+      	  dice= dice + super.myrandom;
+           }
+           super.myrandom = dice;
+  		 return super.myrandom;
+  	}
+     
+  // STATIC METHOD
+    public static int  RollDiceStaticTripple(int number1, int max1)
+   	{   
+       
+       int dice1 =0;
+       for (int i=0; i < 3; i++)
+       	{
+      	 DiceClassLab18.RollDiceStatic(number1, max1);
+      	 dice1= dice1 + DiceClassLab18.myrandom1;
+       	}
+         DiceClassLab18.myrandom1=dice1;
+  	   return DiceClassLab18.myrandom1; 
+   	   }
+    // ********************   section lab 19 ******************************************
+    // ********************************************************************************
+
+    public void  Reset()  
+  	{			
+  	 super.lifeRoll=0;
+  	}
+    
+    public static void  Reset1()  
+  	{			
+  	 lifeRoll1=0;
+  	}
+
+  // ********************   section lab 20 ******************************************
+  // ********************************************************************************
+    public   void RollCountShow()   // method of Lab20 to display points accumulated
+  	{	
+         int point = super.myrandom;
+         int rcount = super.lifeRoll;
+
+  	 String  message1 = String.format("RollTripplePoints   D1= %d, RollCount C1 = %d\n", point, rcount); 
+        JOptionPane.showMessageDialog(null, message1); 	
+  	}
+
+
+
+    public static void  RollCountStaticShow()   // method of Lab20 to display points accumulated
+  	{	
+         int spoints =DiceClassLab18.myrandom1;
+         int rscount =DiceClassLab18.lifeRoll1;
+  	 String  message1 = String.format("StaticTRipplePoints NS= %d, RollCount CS = %d",spoints,rscount); 
+        JOptionPane.showMessageDialog(null, message1); 	
+  	}
+}
+
