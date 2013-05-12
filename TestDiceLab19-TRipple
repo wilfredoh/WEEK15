@@ -1,0 +1,62 @@
+
+/*   WILFREDO HENRIQUEZ
+ *  
+ */
+
+import javax.swing.JOptionPane;
+
+//*****  USING THE CASSS *************
+public class DisplayTrippleDice
+
+{
+  public static void main ( String[] args)
+   {
+
+
+   int c1,c2;
+   int r1, r2;
+   int rs;
+   int cs;
+  String answer="";  
+  do
+  {
+ 
+  	TrippleDice myd1 = new TrippleDice();
+  	TrippleDice myd2 = new TrippleDice();
+  	r1 = myd1.RollDice();
+  	r1 = myd1.RollDice(); // roll twice dice be held on r1 last value
+  	c1 = myd1.RollCount(); // roll count was the time instantiated
+  	
+  	r2 = myd2.RollDice();
+  	c2 = myd2.RollCount();
+  	
+  	rs = TrippleDice.RollDiceStaticTripple(3, 6); 
+  	cs = TrippleDice.lifeRoll1; 
+  	
+  	 String  message1 = String.format("RollTrippleDice  D1= %d, RollCount C1 = %d\n" +
+  	 		                          "RollTRippleDice  D2= %d, RollCount C2 = %d\n" +
+  	 		                          "TRippleDiceSatic NS= %d, RollCount CS = %d", r1, c1, r2, c2, rs, cs ); 
+                                  JOptionPane.showMessageDialog(null, message1); 
+      
+
+       answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+        if  (answer.equalsIgnoreCase("n"))
+         {
+  	    	myd1.Reset();                 // testing reset count only when exit
+  	    	myd2.Reset();
+  		    TrippleDice.Reset1();
+  	    	c1 = myd1.RollCount(); 
+  		    c2 = myd2.RollCount();
+  		    cs = TrippleDice.lifeRoll1; // static call the value of the acumulated static variable
+  	    	String  message2 = String.format("RollCount  C1 = %d\n" +
+               						 "RollCount  C2 = %d\n" +
+               						 "TRollCount CS = %d", c1, c2,cs ); 
+  		    JOptionPane.showMessageDialog(null, message2); 
+  		
+         }
+  } while (answer.equalsIgnoreCase("y"));
+  
+
+  	
+   } // END of Main
+} // End of Class
